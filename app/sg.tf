@@ -15,9 +15,5 @@ resource "aws_security_group" "sg_public_rds" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
-  tags = {
-    Env = local.env_prefix
-  }
 }
 
