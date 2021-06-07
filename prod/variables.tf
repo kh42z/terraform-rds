@@ -6,28 +6,28 @@ variable "region" {
 
 variable "env_name" {
   description = "environment name"
-  type = string
+  type        = string
 }
 
 variable "app_name" {
   description = "app name"
-  type = string
+  type        = string
 }
 
 # RDS
 variable "rds_allocated_storage" {
   description = "RDS allocated storage"
-  type = number
+  type        = number
 }
 
 variable "rds_authorized_ips" {
   description = "List of authorized ips allowed to connect to pg"
-  type = list
+  type        = list(any)
 }
 
 variable "rds_instance_type" {
   description = "RDS instance type"
-  type = string
+  type        = string
 }
 
 variable "rds_password" {
@@ -38,18 +38,18 @@ variable "rds_password" {
 # NETWORK
 variable "cidr" {
   description = "CIDR block for the VPC"
-  type = string
-  default = "172.16.0.0/16"
+  type        = string
+  default     = "172.16.0.0/16"
 }
 
 variable "public_subnets" {
   description = "A list of public subnets inside the VPC"
-  type = list
-  default = ["172.16.1.0/24", "172.16.2.0/24"]
+  type        = list(any)
+  default     = ["172.16.1.0/24", "172.16.2.0/24"]
 }
 
 variable "private_subnets" {
   description = "A list of private subnets inside the VPC"
-  type = list
-  default = ["172.16.100.0/24", "172.16.101.0/24"]
+  type        = list(any)
+  default     = ["172.16.100.0/24", "172.16.101.0/24"]
 }

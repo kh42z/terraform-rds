@@ -1,24 +1,24 @@
 variable "env_prefix" {
   description = "Resources prefix"
-  type = string
+  type        = string
 }
 
 variable "cidr" {
   description = "VPC CIDR"
-  type = string
+  type        = string
 }
 
 variable "public_subnets" {
   description = "VPC public subnets"
-  type = list
+  type        = list(any)
 }
 
 variable "private_subnets" {
   description = "VPC private subnets"
-  type = list
+  type        = list(any)
 }
 
 variable "azs" {
   description = "VPC availibity zones"
-  type = list
+  type        = list(any)
 }
