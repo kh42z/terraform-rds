@@ -1,15 +1,5 @@
-variable "region" {
-  default     = "eu-west-3"
-  description = "AWS region"
-}
-
-variable "env_name" {
-  description = "environment name"
-  type = string
-}
-
-variable "app_name" {
-  description = "app name"
+variable "env_prefix" {
+  description = "Resources prefix"
   type = string
 }
 
@@ -31,5 +21,15 @@ variable "rds_instance_type" {
 variable "rds_password" {
   description = "RDS root user password"
   sensitive   = true
+}
+
+variable "public_subnets" {
+  description = "A list of public subnets"
+  type = list
+}
+
+variable "vpc_id" {
+  description = "VPC ID"
+  type = string
 }
 

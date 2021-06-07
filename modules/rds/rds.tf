@@ -1,5 +1,5 @@
 resource "aws_db_parameter_group" "rds" {
-  name   = "${local.env_prefix}-cluster"
+  name   = "${var.env_prefix}-cluster"
   family = "postgres11"
 
   parameter {
@@ -9,7 +9,7 @@ resource "aws_db_parameter_group" "rds" {
 }
 
 resource "aws_db_instance" "rds" {
-  identifier             = "${local.env_prefix}-rds"
+  identifier             = "${var.env_prefix}-rds"
   instance_class         = var.rds_instance_type
   allocated_storage      = var.rds_allocated_storage
   engine                 = "postgres"
